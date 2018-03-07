@@ -2,9 +2,56 @@
   <head>
     <title>Cookie Clicker 2.0</title>
     <style>
-      h1.Title {
-        text-align: center
+      p {
+          font-family: Arial;
+          text-align: center;
       }
+      button.rip {
+          margin-left: 40%;
+      }
+      button.yeet {
+          margin-left: 33%;
+      }
+      button.ned {
+          margin-left: 31%;
+      }
+      button.lol {
+          margin-left: 33%;
+      }
+      button.cheese {
+          margin-left: 32%;
+      }
+      button.herro {
+          margin-left: 31%;
+      }
+      button.hi {
+          margin-left: 31%;
+      }
+      button.last {
+          margin-left: 30.5%;
+      }
+      button.dc {
+          margin-left: 38%;
+      }
+      button.AM {
+          margin-left: 37%;
+      }
+      body {
+          margin: 5px;
+          border-style: solid;
+          border-width: 4px;
+      }
+      h1 {
+          text-align: center;
+          border-style: solid;
+          border-width: 2px;
+      }
+      h2 {
+          text-align: center;
+          border-style: solid;
+          border-width: 2px;
+      }
+      
     </style>
   </head>
   <body>
@@ -12,13 +59,135 @@
     <p>
       This is my take on making a version of cookie clicker
     </p>
-    <button onclick="click()">Click Me For Cookies :)</button>
+    <p id="Print"></p>
+    <p id="ClP"></p>
+    <p id="CPSP"></p>
+    <button id="" class="rip" onclick="click4cookies();">Click Me For Cookies :)</button>
+    <p></p>
+    <button id="" class="yeet" onclick="CPow();">Click Power : Cost 500 : +1 Click Power</button>
+    <p id="GM"></p>
+    <button id="" class="ned" onclick="COOKIEGWANDMA();">Cookie Grandma : Cost 100 : +1 Cookie /sec</button>
+    <p id="CT"></p>
+    <button id="" class="lol" onclick="CTree();">Cookie Tree : Cost 500 : +5 Cookie /sec</button>
+    <p id="CF"></p>
+    <button id="" class="cheese" onclick="CFarm();">Cookie Farm : Cost 1000 : +10 Cookie /sec</button>
+    <p id="CM"></p>
+    <button id="" class="hi" onclick="CMachine();">Cookie Machine : Cost 5000 : +50 Cookie /sec</button>
+    <p id="CR"></p>
+    <button id="" class="herro" onclick="CRobot();">Cookie Robot : Cost 10000 : +100 Cookie /sec</button>
+    <p id="CFa"></p>
+    <button id="" class="last" onclick="CFactory();">Cookie Factory : Cost 50000 : +500 Cookie /sec</button>
+    <p></p>
+    <h2>Perks</h2>
+    <p id="DP"></p>
+    <button id="" class="dc" onclick="ClickM();">+1 all clicking Multiplier : 10000</button>
+    <p id="AMP"></p>
+    <button id="" class="AM" onclick="AutoM();">+1 Cookies /sec Multiplier : 10000</button>
     <script>
-      var cookies = 0;
-      var clickP = 1;
-       function () {
-       cookie += clickP
-       }
-      }
+    //List the variables
+        var cookies = 100000000;
+        var clickP = 1;
+        var CPS = 0;
+        var GMA = 0;
+        var CTr = 0;
+        var CFa = 0;
+        var CMa = 0;
+        var CRo = 0;
+        var CFa = 0;
+        var SecMultiplier = 1;
+        var CMultiplier = 1;
+        var PerkC = 10000;
+        document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+        document.getElementById("ClP").innerHTML = "Your current click power is " + clickP + " cookie per click";
+        setInterval(function(){ 
+            cookies += CPS*SecMultiplier;
+            document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+            document.getElementById("ClP").innerHTML = "Your current click power is " + clickP + " cookie(s)  per click";
+            
+        }, 1000);
+        function click4cookies() {
+           cookies += clickP*CMultiplier;
+           document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+           console.log('Meow :)');
+        }
+        function CPow() {
+            if (cookies >= 500) {
+                cookies -= 500;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                clickP += 1;
+                document.getElementById("ClP").innerHTML = "Your current click power is " + clickP + " cookie(s) per click"
+            }
+        }
+        function COOKIEGWANDMA() {
+            if (cookies >= 100) {
+                cookies -= 100;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                GMA += 1;
+                CPS += 1;
+                document.getElementById("GM").innerHTML = "You have " + GMA + " Cookie Grandma(s)";
+            }
+        }
+        function CTree() {
+            if (cookies >= 500) {
+                cookies -= 500;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CTr += 1;
+                CPS += 5;
+                document.getElementById("CT").innerHTML = "You have " + CTr + " Cookie Tree(s)"
+            }
+        }
+        function CFarm() {
+            if (cookies >= 1000) {
+                cookies -= 1000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CFa += 1;
+                CPS += 10;
+                document.getElementById("CF").innerHTML = "You have " + CFa + " Cookie Tree(s)"
+            }
+        }
+        function CMachine() {
+            if (cookies >= 5000) {
+                cookies -= 5000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CMa += 1;
+                CPS += 50;
+                document.getElementById("CM").innerHTML = "You have " + CMa + " Cookie Machines(s)"
+            }
+        }
+        function CRobot() {
+            if (cookies >= 10000) {
+                cookies -= 10000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CRo += 1;
+                CPS += 100;
+                document.getElementById("CR").innerHTML = "You have " + CRo + " Cookie Robot(s)"
+            }
+        }
+        function CFactory() {
+            if (cookies >= 50000) {
+                cookies -= 50000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CFa += 1;
+                CPS += 500;
+                document.getElementById("CFa").innerHTML = "You have " + CFa + " Cookie Factor(y/ies)"
+            }
+        }
+        function ClickM() {
+            if (cookies >= 10000) {
+                cookies -= 10000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                CMultiplier += 1;
+                document.getElementById("DP").innerHTML = "You have a click multiplier of " + CMultiplier;
+            }
+        }
+        function AutoM() {
+            if (cookies >= 10000) {
+                cookies -= 10000;
+                document.getElementById("Print").innerHTML = "You have " + cookies + " cookies";
+                SecMultiplier += 1;
+                document.getElementById("AMP").innerHTML = "You have cookie /sec multiplier of " + SecMultiplier;
+            }
+        }
     </script>
 </body>
+</html>
